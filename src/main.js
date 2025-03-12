@@ -8,6 +8,9 @@ import ElementUI from 'element-ui'
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.use(ElementUI)
+
+// require('./api/mes/mock');
+
 new Vue({
   router,  
   store,   
