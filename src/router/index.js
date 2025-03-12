@@ -13,6 +13,11 @@ const routes = [
     path: '/quality/inspection',
     name: 'ProductInspection',
     component: () => import('../views/quality/ProductInspection.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/login/index.vue')
   }
 ]
 
@@ -23,7 +28,12 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  next()
+  const token = localStorage.getItem('token')
+  if (to.path !== '/login' && !token) {
+    next('/login')
+  } else {
+    next()
+  }
 })
 
 export default router

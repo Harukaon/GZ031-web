@@ -2,10 +2,11 @@ const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 
 module.exports = defineConfig({
+  lintOnSave: false,
   transpileDependencies: true,
   devServer: {
     host: '0.0.0.0',
-    port: 8080,
+    port: 8088,
     open: true
   },
   // 配置路径别名

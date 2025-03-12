@@ -30,14 +30,14 @@ request.interceptors.response.use(
     
     if (res.code !== 200) {
       Message({
-        message: res.message || '错误',
+        message: res.msg || '错误',
         type: 'error',
       })
 
       if (res.code === 401) {
 
       }
-      return Promise.reject(new Error(res.message || '错误'))
+      return Promise.reject(new Error(res.msg || '错误'))
     } else {
       return res
     }
